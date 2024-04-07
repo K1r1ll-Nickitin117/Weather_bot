@@ -1,0 +1,4 @@
+aiogram
+asyncio
+aiohttp
+db-sqlite3
