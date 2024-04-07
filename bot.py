@@ -3,8 +3,9 @@ from aiogram.filters import Command
 from aiogram.types import Message
 from aiogram import Bot, Dispatcher, types
 from config import BOT_TOKEN
+import logging
 
-
+logging.basicConfig(level=logging.INFO)
 bot = Bot(BOT_TOKEN)
 dp = Dispatcher(bot=bot)
 
