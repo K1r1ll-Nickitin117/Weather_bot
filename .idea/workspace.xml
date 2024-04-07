@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1a2a50b-b63f-4229-98ab-800ed674d2e4" name="Changes" comment="first test commit">
+    <list default="true" id="b1a2a50b-b63f-4229-98ab-800ed674d2e4" name="Changes" comment="///">
       <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/set_commands.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/set_menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
     </list>
@@ -62,6 +64,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PyProject\pythonProject1" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject1" />
@@ -127,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712500814869</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="///">
+      <option name="closed" value="true" />
+      <created>1712505811116</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712505811116</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,7 +150,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first test commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first test commit" />
+    <MESSAGE value="///" />
+    <option name="LAST_COMMIT_MESSAGE" value="///" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pythonProject1$bot.coverage" NAME="bot Coverage Results" MODIFIED="1712389879688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

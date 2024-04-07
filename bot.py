@@ -2,6 +2,8 @@ from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
 from aiogram.types import Message
 from aiogram import Bot, Dispatcher, types
+from aiogram import Bot
+from set_menu import set_main_menu
 from config import BOT_TOKEN
 import logging
 
@@ -11,23 +13,37 @@ dp = Dispatcher(bot=bot)
 
 
 class Bot:
-    # Этот хэндлер будет срабатывать на команду "/start"
     @dp.message(Command(commands=["start"]))
     async def process_start_command(message: Message):
-        await message.answer('Привет!\nМеня зовут Эхо-бот!\nНапиши мне что-нибудь')
+        await message.answer('start')
 
-    # Этот хэндлер будет срабатывать на команду "/help"
     @dp.message(Command(commands=['help']))
-    async def process_help_command(message: Message):
-        await message.answer(
-            'Напиши мне что-нибудь и в ответ '
-            'я пришлю тебе твое сообщение'
-        )
+    async def process_help_command(self, message: Message):
+        await set_main_menu(bot)
+        await message.answer('help')
 
-    # Этот хэндлер будет срабатывать на любые ваши текстовые сообщения,
-    # кроме команд "/start" и "/help"
+    @dp.message(Command(commands=['location_now']))
+    async def process_location_now_command(self, message: Message):
+        await message.answer('location_now')
+
+    @dp.message(Command(commands=['weather']))
+    async def process_weather_command(self, message: Message):
+        await message.answer('weather')
+
+    @dp.message(Command(commands=['my_location']))
+    async def process_my_location_command(self, message: Message):
+        await message.answer('my_location')
+
+    @dp.message(Command(commands=['change_location']))
+    async def process_change_location_command(self, message: Message):
+        await message.answer('change_location')
+
+    @dp.message(Command(commands=['what_to_wear']))
+    async def process_what_to_wear_command(self, message: Message):
+        await message.answer('what_to_wear')
+
     @dp.message()
-    async def send_echo(message: Message):
+    async def send_echo(self, message: Message):
         await message.reply(text=message.text)
 
 
