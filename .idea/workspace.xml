@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1a2a50b-b63f-4229-98ab-800ed674d2e4" name="Changes" comment="///">
+    <list default="true" id="b1a2a50b-b63f-4229-98ab-800ed674d2e4" name="Changes" comment="add new commands">
       <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/set_commands.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/set_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings/keyboard.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings/set_menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/set_commands.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/set_menu.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +44,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2eiFksSlH6uR3WzPaJsCb2AFNJG" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -67,6 +71,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PyProject\pythonProject1" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PyProject\pythonProject1\settings" />
     </key>
   </component>
   <component name="RunManager">
@@ -142,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712505811116</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add new commands">
+      <option name="closed" value="true" />
+      <created>1712508626818</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712508626818</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +166,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first test commit" />
     <MESSAGE value="///" />
-    <option name="LAST_COMMIT_MESSAGE" value="///" />
+    <MESSAGE value="add new commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new commands" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pythonProject1$bot.coverage" NAME="bot Coverage Results" MODIFIED="1712389879688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
