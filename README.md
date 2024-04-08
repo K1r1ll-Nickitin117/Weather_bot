@@ -10,7 +10,7 @@
 BOT_TOKEN = 'TOKEN'
 OPEN_WEATHER_API_KEY = 'api_key'
 ```
-2) Установка зависимостей
+2) Установить зависимости
 ```
 pip install -r requirements.txt
 ```
