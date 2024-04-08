@@ -2,7 +2,7 @@ import logging
 
 from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
-from aiogram import Bot, Dispatcher, types
+from aiogram import Bot, Dispatcher, F, types
 
 from settings.set_menu import set_menu
 from settings.keyboard import main_kb
@@ -25,36 +25,33 @@ logging.basicConfig(level=logging.INFO)
 
 
 class Bot:
+
     @dp.message(CommandStart())
     async def process_start_command(message: Message):
-        await message.answer(start_phrase, reply_markup=main_kb)
+        await message.answer(f'Привет, {message.from_user.first_name}' + ' ' + start_phrase, reply_markup=main_kb)
         await set_menu(bot)
 
-    @dp.message(Command(commands=['restart']))
-    async def process_help_command(message: Message):
-        await message.answer(restart_phrase, reply_markup=main_kb)
-
-    @dp.message(Command(commands=['help']))
+    @dp.message(F.text == 'Справка')
     async def process_help_command(message: Message):
         await message.answer(help_phrase)
 
-    @dp.message(Command(commands=['location_now']))
+    @dp.message(F.text == 'Локация сейчас')
     async def process_location_now_command(message: Message):
         await message.answer(location_now_phrase)
 
-    @dp.message(Command(commands=['weather']))
+    @dp.message(F.text == 'Погода')
     async def process_weather_command(message: Message):
         await message.answer(weather_phrase)
 
-    @dp.message(Command(commands=['my_location']))
+    @dp.message(F.text == 'Моя локация')
     async def process_my_location_command(message: Message):
         await message.answer(my_location_phrase)
 
-    @dp.message(Command(commands=['change_location']))
+    @dp.message(F.text == 'Сменить локацию')
     async def process_change_location_command(message: Message):
         await message.answer(change_location_phrase)
 
-    @dp.message(Command(commands=['what_to_wear']))
+    @dp.message(F.text == 'Что надеть')
     async def process_what_to_wear_command(message: Message):
         await message.answer(what_to_wear_phrase)
 
