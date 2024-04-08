@@ -4,8 +4,9 @@ from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
 from aiogram import Bot, Dispatcher, types
 
-from settings.set_menu import set_main_menu
-from settings.keyboard import keyboard
+from settings.set_menu import set_menu
+from settings.keyboard import main_kb
+from settings.phrases import help_phrase, start_phrase
 from config import BOT_TOKEN
 
 bot = Bot(BOT_TOKEN)
@@ -17,14 +18,16 @@ logging.basicConfig(level=logging.INFO)
 class Bot:
     @dp.message(CommandStart())
     async def process_start_command(message: Message):
-        await message.answer('Привет!\nМеня зовут Эхо-бот!\nНапиши мне что-нибудь', reply_markup=keyboard)
+        await message.answer(start_phrase, reply_markup=main_kb)
+        await set_menu(bot)
+
+    @dp.message(Command(commands=['restart']))
+    async def process_help_command(message: Message):
+        await message.answer('restart', reply_markup=main_kb)
 
     @dp.message(Command(commands=['help']))
     async def process_help_command(message: Message):
-        await message.answer(
-            'Напиши мне что-нибудь и в ответ '
-            'я пришлю тебе твое сообщение'
-        )
+        await message.answer(help_phrase)
 
     @dp.message(Command(commands=['location_now']))
     async def process_location_now_command(message: Message):
@@ -48,7 +51,8 @@ class Bot:
 
     @dp.message()
     async def send_echo(message: Message):
-        await message.reply(text=message.text)
+        # await message.reply(text=message.text)
+        await message.reply('Я вас не понял')
 
 
 if __name__ == '__main__':

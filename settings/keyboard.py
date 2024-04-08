@@ -1,9 +1,12 @@
-from aiogram import Bot, Dispatcher, types
+from aiogram import types
+from aiogram.types import ReplyKeyboardMarkup
 
-kb = [
-            [types.KeyboardButton(text='Локация сейчас'), types.KeyboardButton(text='Погода')],
-            [types.KeyboardButton(text='Мои локации'), types.KeyboardButton(text='Поменять локацию')],
-            [types.KeyboardButton(text='Что надеть'), types.KeyboardButton(text='Помощь')]
-        ]
-
-keyboard = types.ReplyKeyboardMarkup(keyboard=kb)
+main_kb = ReplyKeyboardMarkup(
+    keyboard=[
+            [types.KeyboardButton(text='/location_now'), types.KeyboardButton(text='/weather')],
+            [types.KeyboardButton(text='/my_location'), types.KeyboardButton(text='/change_location')],
+            [types.KeyboardButton(text='/what_to_wear'), types.KeyboardButton(text='/help')],
+            [types.KeyboardButton(text='/start'), types.KeyboardButton(text='/restart')]
+        ],
+    resize_keyboard=True
+)

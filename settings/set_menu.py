@@ -8,11 +8,13 @@ COMMANDS: dict[str, str] = {
     '/my_location': 'Мои локации',
     '/change_location': 'Поменять локацию',
     '/what_to_wear': 'Что надеть',
-    '/help': 'Помощь'
+    '/help': 'Справка по боту',
+    '/start': 'Старт бота',
+    '/restart': 'Рестарт бота'
 }
 
 
-async def set_main_menu(bot: Bot):
+async def set_menu(bot: Bot):
     main_menu_commands = [
         BotCommand(
             command=command,
