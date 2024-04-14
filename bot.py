@@ -4,6 +4,8 @@ from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
 from aiogram import Bot, Dispatcher, F, types
 
+from bot_func import BotFunc
+
 from settings.set_menu import set_menu
 from settings.keyboard import main_kb
 from settings.phrases import (help_phrase,
@@ -24,8 +26,7 @@ dp = Dispatcher(bot=bot)
 logging.basicConfig(level=logging.INFO)
 
 
-class Bot:
-
+class Bot(BotFunc):
     @dp.message(CommandStart())
     async def process_start_command(message: Message):
         await message.answer(f'Привет, {message.from_user.first_name}' + ' ' + start_phrase, reply_markup=main_kb)
