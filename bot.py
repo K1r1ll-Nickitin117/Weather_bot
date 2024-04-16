@@ -3,10 +3,11 @@ import json
 from translate import Translator
 import os
 
+from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
 from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
-from aiogram import Bot, Dispatcher, F, types
+from aiogram import Bot, Dispatcher, F, types, Router
 
 
 from api_open_weather.find_location import find_location, get_weather
@@ -40,25 +41,6 @@ class Bot():
     @dp.message(F.text == 'Погода')
     async def process_weather_command(message: Message):
         await message.answer(weather_phrase)
-
-    @dp.message()
-    async def get_city_name(message: types.Message, state: FSMContext):
-        city_name = message.text
-        await find_location(city_name)
-        with open('data/weather.json', 'r', encoding='utf-8') as weather:
-            weather_data = json.load(weather)
-        description = weather_data['weather'][0]['description']
-        temp_min = weather_data['main']['temp_min']
-        temp_max = weather_data['main']['temp_max']
-        feels_like = weather_data['main']['feels_like']
-        await message.answer(f'''Погода в месте {city_name}:\n
-Описание: {to_ru.translate(description)}.\n
-Минимальная температура: {int(temp_min - 273.15)} градусов.\n
-Минимальная максимальная: {int(temp_max - 273.15)} градусов.\n
-Ошущается как - {int(feels_like - 273.15)} градусов.\n
-                       ''')
-        os.remove('data/find_location.json')
-        os.remove('data/weather.json')
 
     @dp.message(F.text == 'Что надеть')
     async def process_what_to_wear_command(message: Message):
