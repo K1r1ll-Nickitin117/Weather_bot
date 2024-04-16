@@ -3,13 +3,12 @@ import json
 from translate import Translator
 import os
 
-from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
 from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
-from aiogram import Bot, Dispatcher, F, types, Router
+from aiogram import Bot, Dispatcher, F, types
 
-from api_open_weather.find_location import find_location, get_weather
+from api_open_weather.find_location import find_location
 from settings.set_menu import set_menu
 from settings.keyboard import main_kb
 from settings.phrases import (help_phrase,
