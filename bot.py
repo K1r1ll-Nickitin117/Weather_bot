@@ -32,7 +32,7 @@ class Bot:
         await message.answer(f'Привет, {message.from_user.first_name}' + ' ' + start_phrase, reply_markup=main_kb)
         await set_menu(bot)
 
-    @dp.message(F.text == 'Справка')  # Здесь работа закочена
+    @dp.message(F.text == 'Справка')
     async def process_help_command(message: Message):
         await message.answer(help_phrase)
 
@@ -75,7 +75,7 @@ class Bot:
     async def what_to_wear_command(message: Message):
         await message.answer(what_to_wear_phrase)
 
-    @dp.message(Command(commands=['help']))  # Здесь работа закончена
+    @dp.message(Command(commands=['help']))
     async def help_command(message: Message):
         await message.answer(help_phrase)
 
