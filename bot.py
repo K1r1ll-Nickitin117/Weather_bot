@@ -9,7 +9,6 @@ from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
 from aiogram import Bot, Dispatcher, F, types, Router
 
-
 from api_open_weather.find_location import find_location, get_weather
 from settings.set_menu import set_menu
 from settings.keyboard import main_kb

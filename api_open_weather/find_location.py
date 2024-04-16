@@ -1,5 +1,4 @@
 import aiohttp
-import asyncio
 import json
 from config import OPEN_WEATHER_API_KEY
 
