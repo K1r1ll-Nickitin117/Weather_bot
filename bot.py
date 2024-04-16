@@ -53,7 +53,7 @@ class Bot:
         await message.answer(weather_phrase)
 
     @dp.message()
-    async def get_city_name(message: types.Message, state: FSMContext):
+    async def get_city_name(message: types.Message):
         city_name = message.text
         await find_location(city_name)
         with open('data/weather.json', 'r', encoding='utf-8') as weather:
