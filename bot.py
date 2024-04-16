@@ -26,7 +26,7 @@ dp = Dispatcher(bot=bot)
 logging.basicConfig(level=logging.INFO)
 
 
-class Bot():
+class Bot:
     @dp.message(CommandStart())
     async def process_start_command(message: Message):
         await message.answer(f'Привет, {message.from_user.first_name}' + ' ' + start_phrase, reply_markup=main_kb)
