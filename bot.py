@@ -63,10 +63,10 @@ class Bot:
         temp_max = weather_data['main']['temp_max']
         feels_like = weather_data['main']['feels_like']
         await message.answer(f'''Погода в месте {city_name}:\n
-    Описание - {to_ru.translate(description)}.\n
-    Минимальная температура: {int(temp_min - 273.15)} градусов.\n
-    Минимальная максимальная: - {int(temp_max - 273.15)} градусов.\n
-    Ошущается как: {int(feels_like - 273.15)} градусов.\n
+Описание - {to_ru.translate(description)}.\n
+Минимальная температура: {int(temp_min - 273.15)} градусов.\n
+Минимальная максимальная: - {int(temp_max - 273.15)} градусов.\n
+Ошущается как: {int(feels_like - 273.15)} градусов.\n
                            ''')
         os.remove('data/find_location.json')
         os.remove('data/weather.json')
