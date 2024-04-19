@@ -3,11 +3,11 @@ import json
 from translate import Translator
 import os
 
-from aiogram.fsm.context import FSMContext
 from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
 from aiogram import Bot, Dispatcher, F, types
 
+from db.db_s import DB
 from api_open_weather.find_location import find_location
 from settings.set_menu import set_menu
 from settings.keyboard import main_kb
@@ -26,7 +26,11 @@ dp = Dispatcher(bot=bot)
 logging.basicConfig(level=logging.INFO)
 
 
-class Bot:
+class Bot(DB):
+    def __init__(self):
+        super.__init__()
+        self.db = DB
+
     @dp.message(CommandStart())
     async def process_start_command(message: Message):
         await message.answer(f'Привет, {message.from_user.first_name}' + ' ' + start_phrase, reply_markup=main_kb)
@@ -45,14 +49,35 @@ class Bot:
         await message.answer(what_to_wear_phrase)
 
     @dp.message(F.text == 'Рестарт')
-    async def process_help_command(message: Message):
+    async def process_restart_command(message: Message):
         await message.answer(restart_phrase)
+
+    @dp.message(F.text == 'Статистика')
+    async def process_stat_command(message: Message):
+        db = DB()
+        db.connect()
+        stat = []
+        try:
+            result = db.execute('SELECT * FROM location')
+            for row in db.fetchall(result):
+                stat.append(row)
+        finally:
+            db.close()
+        answer_stat = 'Ваши запросы:\n'
+        if stat:
+            for res in row:
+                    answer_stat += f'{res[0]}, широта - {res[1]}, долгота - {res[2]};\n'
+                # TypeError: 'int' object is not subscriptable (69 строка)
+            await message.answer(answer_stat)
+
+        else:
+            await message.answer('У вас нет запросов. По этому я не могу предоставить вам статистику')
 
     @dp.message(Command(commands=['weather']))
     async def weather_command(message: Message):
         await message.answer(weather_phrase)
 
-    @dp.message()
+    @dp.message(lambda x: x.text and x.text.istitle())
     async def get_city_name(message: types.Message):
         city_name = message.text
         await find_location(city_name)
@@ -81,6 +106,10 @@ class Bot:
 
     @dp.message(Command(commands=['restart']))
     async def restart_command(message: Message):
+        await message.answer(restart_phrase)
+
+    @dp.message(Command(commands=['stat']))
+    async def stat_command(message: Message):
         await message.answer(restart_phrase)
 
     @dp.message()
