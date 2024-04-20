@@ -50,7 +50,6 @@ class Bot(DB):
     @dp.message(F.text == 'Рестарт')
     async def process_restart_command(message: Message):
         db = DB()
-        db.connect()
         db.drop_table()
         await message.answer(restart_phrase)
 
@@ -83,12 +82,15 @@ class Bot(DB):
         with open('data/find_location.json', 'r', encoding='utf-8') as cooords:
             data = json.load(cooords)
 
+        lat = data[0]['lat']
+        lon = data[0]['lon']
         db = DB()
-        db.connect()
-        db.add_city(city_name, data[0]['lat'], data[0]['lon'])
+        db.add_city(city_name, lat, lon)
 
         os.remove('data/find_location.json')
         os.remove('data/weather.json')
+        print(type(lat))
+        print(type(lon))
 
     @dp.message(Command(commands=['what_to_wear']))
     async def what_to_wear_command(message: Message):
@@ -101,7 +103,6 @@ class Bot(DB):
     @dp.message(Command(commands=['restart']))
     async def restart_command(message: Message):
         db = DB()
-        db.connect()
         db.drop_table()
         await message.answer(restart_phrase)
 
