@@ -29,7 +29,6 @@ logging.basicConfig(level=logging.INFO)
 class Bot(DB):
     def __init__(self):
         super.__init__()
-        self.db = DB
 
     @dp.message(CommandStart())
     async def process_start_command(message: Message):
@@ -50,28 +49,15 @@ class Bot(DB):
 
     @dp.message(F.text == 'Рестарт')
     async def process_restart_command(message: Message):
+        db = DB()
+        db.connect()
+        db.drop_table()
         await message.answer(restart_phrase)
 
     @dp.message(F.text == 'Статистика')
     async def process_stat_command(message: Message):
         db = DB()
-        db.connect()
-        stat = []
-        try:
-            result = db.execute('SELECT * FROM location')
-            for row in db.fetchall(result):
-                stat.append(row)
-        finally:
-            db.close()
-        answer_stat = 'Ваши запросы:\n'
-        if stat:
-            for res in row:
-                    answer_stat += f'{res[0]}, широта - {res[1]}, долгота - {res[2]};\n'
-                # TypeError: 'int' object is not subscriptable (69 строка)
-            await message.answer(answer_stat)
-
-        else:
-            await message.answer('У вас нет запросов. По этому я не могу предоставить вам статистику')
+        await message.answer(db.get_stat())
 
     @dp.message(Command(commands=['weather']))
     async def weather_command(message: Message):
@@ -93,6 +79,14 @@ class Bot(DB):
 Минимальная максимальная: - {int(temp_max - 273.15)} градусов.\n
 Ошущается как: {int(feels_like - 273.15)} градусов.\n
                            ''')
+
+        with open('data/find_location.json', 'r', encoding='utf-8') as cooords:
+            data = json.load(cooords)
+
+        db = DB()
+        db.connect()
+        db.add_city(city_name, data[0]['lat'], data[0]['lon'])
+
         os.remove('data/find_location.json')
         os.remove('data/weather.json')
 
@@ -106,14 +100,18 @@ class Bot(DB):
 
     @dp.message(Command(commands=['restart']))
     async def restart_command(message: Message):
+        db = DB()
+        db.connect()
+        db.drop_table()
         await message.answer(restart_phrase)
 
     @dp.message(Command(commands=['stat']))
     async def stat_command(message: Message):
-        await message.answer(restart_phrase)
+        db = DB()
+        await message.answer(db.get_stat())
 
     @dp.message()
-    async def send_echo(message: Message):
+    async def if_the_message_has_not_been_processed(message: Message):
         await message.reply(if_the_message_has_not_been_processed_phrase)
 
 

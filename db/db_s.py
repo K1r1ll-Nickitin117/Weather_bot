@@ -36,11 +36,33 @@ class DB:
         return cursor.fetchall()
 
     def get_stat(self):
-        pass
+        db = DB()
+        db.connect()
+        stat = []
+        try:
+            result = db.execute('SELECT  *  FROM location')
+            for row in db.fetchall(result):
+                stat.append(row)
+        finally:
+            db.close()
+        answer_stat = 'Ваши запросы:\n'
+        if stat:
+            for res in stat:
+                answer_stat += f'{res[1]}, широта - {res[2]}, долгота - {res[3]};\n'
+        return answer_stat
 
     def drop_table(self):
-        # db.execute('DROP TABLE')
-        pass
+        db = DB()
+        db.connect()
+        db.execute('''''DROP TABLE location') 
+        db.execute('CREATE TABLE location (
+    id   INTEGER PRIMARY KEY,
+    city TEXT,
+    lat  REAL,
+    lon  REAL)''')
 
-    def start_db_ses(self):
-        pass
+    def add_city(self, city, lat, lon):
+        db = DB()
+        db.connect()
+        db.execute(f'INSERT INTO location (city, lat, lon) VALUES (?, ?, ?)',
+                   (f'{city}', {lat}, {lon}))
