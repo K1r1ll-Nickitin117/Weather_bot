@@ -6,6 +6,7 @@ from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
 from aiogram import Bot, Dispatcher, F, types
 
+from check_city import check_city
 from db.db_s import DB
 from api_open_weather.find_location import find_location
 from settings.set_menu import set_menu
@@ -60,31 +61,36 @@ class Bot(DB):
     async def weather_command(message: Message):
         await message.answer(weather_phrase)
 
-    @dp.message(lambda x: x.text and x.text.istitle())
+    @dp.message(F.text)
     async def get_city_name(message: types.Message):
         city_name = message.text
-        await find_location(city_name)
-        with open('data/weather.json', 'r', encoding='utf-8') as weather:
-            weather_data = json.load(weather)
-        description = weather_data['weather'][0]['description']
-        temp_min = weather_data['main']['temp_min']
-        temp_max = weather_data['main']['temp_max']
-        feels_like = weather_data['main']['feels_like']
-        await message.answer(f'''Погода в месте {city_name}:\n
+        if check_city(message.text):
+            await find_location(city_name)
+            with open('data/weather.json', 'r', encoding='utf-8') as weather:
+                weather_data = json.load(weather)
+            description = weather_data['weather'][0]['description']
+            temp_min = weather_data['main']['temp_min']
+            temp_max = weather_data['main']['temp_max']
+            feels_like = weather_data['main']['feels_like']
+            await message.answer(f'''Погода в месте {city_name}:\n
 Описание - {description}.\n
 Минимальная температура: {int(temp_min - 273.15)} градусов.\n
 Минимальная максимальная: - {int(temp_max - 273.15)} градусов.\n
 Ошущается как: {int(feels_like - 273.15)} градусов.\n
-                           ''')
+                               ''')
 
-        with open('data/find_location.json', 'r', encoding='utf-8') as cooords:
-            data = json.load(cooords)
+            with open('data/find_location.json', 'r', encoding='utf-8') as cooords:
+                data = json.load(cooords)
 
-        db = DB()
-        db.add_city(city_name, float(data[0]['lat']), float(data[0]['lon']))
+            db = DB()
+            db.add_city(city_name, float(data[0]['lat']), float(data[0]['lon']))
 
-        os.remove('data/find_location.json')
-        os.remove('data/weather.json')
+            os.remove('data/find_location.json')
+            os.remove('data/weather.json')
+            os.remove('data/check_city.json')
+        else:
+            await message.answer('Такого места нет')
+            os.remove('data/check_city.json')
 
     @dp.message(Command(commands=['what_to_wear']))
     async def what_to_wear_command(message: Message):
