@@ -7,7 +7,7 @@ from config import OPEN_WEATHER_API_KEY
 async def get_weather(lat, lon):
     async with aiohttp.ClientSession() as session:
         async with session.get(
-                f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={OPEN_WEATHER_API_KEY}') as response:
+                f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={OPEN_WEATHER_API_KEY}&lang=ru') as response:
             print("Status:", response.status)
             print("Content-type:", response.headers['content-type'])
             data = await response.text()
@@ -18,7 +18,7 @@ async def get_weather(lat, lon):
 async def find_location(location):
     async with aiohttp.ClientSession() as session:
         async with session.get(
-                f'http://api.openweathermap.org/geo/1.0/direct?q={location}&limit=1&appid={OPEN_WEATHER_API_KEY}') as response:
+                f'http://api.openweathermap.org/geo/1.0/direct?q={location}&limit=1&appid={OPEN_WEATHER_API_KEY}&lang=ru') as response:
             print("Status:", response.status)
             print("Content-type:", response.headers['content-type'])
             data = await response.text()

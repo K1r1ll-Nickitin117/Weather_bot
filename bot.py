@@ -1,6 +1,5 @@
 import logging
 import json
-from translate import Translator
 import os
 
 from aiogram.filters import Command, CommandStart
@@ -20,7 +19,6 @@ from settings.phrases import (help_phrase,
 
 from config import BOT_TOKEN
 
-to_ru = Translator(to_lang="Ru")
 bot = Bot(BOT_TOKEN)
 dp = Dispatcher(bot=bot)
 logging.basicConfig(level=logging.INFO)
@@ -73,7 +71,7 @@ class Bot(DB):
         temp_max = weather_data['main']['temp_max']
         feels_like = weather_data['main']['feels_like']
         await message.answer(f'''Погода в месте {city_name}:\n
-Описание - {to_ru.translate(description)}.\n
+Описание - {description}.\n
 Минимальная температура: {int(temp_min - 273.15)} градусов.\n
 Минимальная максимальная: - {int(temp_max - 273.15)} градусов.\n
 Ошущается как: {int(feels_like - 273.15)} градусов.\n
@@ -82,15 +80,11 @@ class Bot(DB):
         with open('data/find_location.json', 'r', encoding='utf-8') as cooords:
             data = json.load(cooords)
 
-        lat = data[0]['lat']
-        lon = data[0]['lon']
         db = DB()
-        db.add_city(city_name, lat, lon)
+        db.add_city(city_name, float(data[0]['lat']), float(data[0]['lon']))
 
         os.remove('data/find_location.json')
         os.remove('data/weather.json')
-        print(type(lat))
-        print(type(lon))
 
     @dp.message(Command(commands=['what_to_wear']))
     async def what_to_wear_command(message: Message):

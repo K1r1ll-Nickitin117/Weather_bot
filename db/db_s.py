@@ -4,18 +4,19 @@ import sqlite3
 class DB:
     @staticmethod
     def get_stat():
-        con = sqlite3.connect('weather_bot.db')
-        cur = con.cursor()
         stat = []
-
-        result = cur.execute('SELECT * FROM location')
-        for row in cur.fetchall(result):
+        con = sqlite3.connect('db/weather_bot.db')
+        cur = con.cursor()
+        result = cur.execute('SELECT * FROM Location')
+        for row in result:
             stat.append(row)
 
         answer_stat = 'Ваши запросы:\n'
         if stat:
             for res in stat:
-                answer_stat += f'{res[1]}, широта - {res[2]}, долгота - {res[3]};\n'
+                answer_stat += f'{res[0]}, широта - {res[1]}, долгота - {res[2]};\n'
+        else:
+            return 'История поиска пуста. Узнайте погоду.'
         con.commit()
         con.close()
         return answer_stat
@@ -24,8 +25,8 @@ class DB:
     def drop_table():
         con = sqlite3.connect('weather_bot.db')
         cur = con.cursor()
-        cur.execute('''''DROP TABLE location') 
-        db.execute('CREATE TABLE location (
+        cur.execute('DROP TABLE IF EXISTS Location')
+        cur.execute('''CREATE TABLE Location (
     id   INTEGER PRIMARY KEY,
     city TEXT,
     lat  REAL,
@@ -35,9 +36,8 @@ class DB:
 
     @staticmethod
     def add_city(city, lat, lon):
-        con = sqlite3.connect('weather_bot.db')
+        con = sqlite3.connect('db/weather_bot.db')
         cur = con.cursor()
-        cur.execute(f'INSERT INTO location (city, lat, lon) VALUES (?, ?, ?)',
-                    (f'{city}', {lat}, {lon}))
+        cur.execute('''INSERT INTO Location VALUES (?, ?, ?)''', (city, lat, lon))
         con.commit()
         con.close()
