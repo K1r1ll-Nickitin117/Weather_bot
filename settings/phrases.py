@@ -10,4 +10,3 @@ weather_phrase = 'Введите место, где вы хотите посмо
 what_to_wear_phrase = '////'
 restart_phrase = 'Произошёл перезапуск бота. База данных была сброшена до начальных параметров.'
 if_the_message_has_not_been_processed_phrase = 'Я вас не понял.'
-
