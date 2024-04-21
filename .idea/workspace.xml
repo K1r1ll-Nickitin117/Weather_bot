@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1a2a50b-b63f-4229-98ab-800ed674d2e4" name="Changes" comment="////52...">
-      <change afterPath="$PROJECT_DIR$/check_city.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/check_city.py" beforeDir="false" afterPath="$PROJECT_DIR$/check_city.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db_s.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_s.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/weather_bot.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/weather_bot.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommendations/poll_with_clothes_items.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommendations/system_recommendations.py" beforeDir="false" afterPath="$PROJECT_DIR$/giga_chat_api/gigachat_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/keyboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/keyboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/phrases.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/set_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/set_menu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +63,7 @@
     "Python.find_coords.executor": "Run",
     "Python.find_location.executor": "Run",
     "Python.get_ip.executor": "Run",
+    "Python.gigachat_api.executor": "Run",
     "Python.ее.executor": "Run",
     "Python.уу.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -79,6 +87,7 @@
       <recent name="D:\PyProject\pythonProject1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PyProject\pythonProject1\giga_chat_api" />
       <recent name="D:\PyProject\pythonProject1\db" />
       <recent name="D:\PyProject\pythonProject1\settings" />
     </key>
@@ -173,7 +182,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="find_location" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="gigachat_api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject1" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -182,11 +191,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api_open_weather" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/giga_chat_api" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api_open_weather/find_location.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/giga_chat_api/gigachat_api.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -198,10 +207,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.bot" />
+        <item itemvalue="Python.gigachat_api" />
         <item itemvalue="Python.check_city" />
         <item itemvalue="Python.dd" />
         <item itemvalue="Python.db_s" />
-        <item itemvalue="Python.find_location" />
       </list>
     </recent_temporary>
   </component>
@@ -464,7 +473,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713640713035</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="////52...">
+      <option name="closed" value="true" />
+      <created>1713645636280</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1713645636280</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

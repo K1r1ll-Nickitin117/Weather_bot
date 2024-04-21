@@ -23,14 +23,9 @@ class DB:
 
     @staticmethod
     def drop_table():
-        con = sqlite3.connect('weather_bot.db')
+        con = sqlite3.connect('db/weather_bot.db')
         cur = con.cursor()
-        cur.execute('DROP TABLE IF EXISTS Location')
-        cur.execute('''CREATE TABLE Location (
-    id   INTEGER PRIMARY KEY,
-    city TEXT,
-    lat  REAL,
-    lon  REAL)''')
+        cur.execute('UPDATE Location SET city = NULL, lat = NULL, lon = NULL WHERE FALSE;')
         con.commit()
         con.close()
 

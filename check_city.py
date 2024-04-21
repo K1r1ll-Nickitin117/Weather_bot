@@ -1,7 +1,5 @@
-import requests
-from config import GEOCODER_API_KEY
+from settings.config import GEOCODER_API_KEY
 import aiohttp
-import asyncio
 import json
 
 
@@ -21,8 +19,7 @@ async def check_city(city):
     with open('data/check_city.json', 'r', encoding='utf-8') as check_city:
         data = json.load(check_city)
     found = data["response"]["GeoObjectCollection"]["metaDataProperty"]["GeocoderResponseMetaData"]["found"]
-    if found == 0:
+    if found == "0":
         return True
     else:
         return False
-

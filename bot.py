@@ -6,6 +6,7 @@ from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
 from aiogram import Bot, Dispatcher, F, types
 
+from giga_chat_api.gigachat_api import giga_chat_weather
 from check_city import check_city
 from db.db_s import DB
 from api_open_weather.find_location import find_location
@@ -14,11 +15,10 @@ from settings.keyboard import main_kb
 from settings.phrases import (help_phrase,
                               start_phrase,
                               weather_phrase,
-                              what_to_wear_phrase,
                               restart_phrase,
                               if_the_message_has_not_been_processed_phrase)
 
-from config import BOT_TOKEN
+from settings.config import BOT_TOKEN
 
 bot = Bot(BOT_TOKEN)
 dp = Dispatcher(bot=bot)
@@ -42,9 +42,6 @@ class Bot(DB):
     async def process_weather_command(message: Message):
         await message.answer(weather_phrase)
 
-    @dp.message(F.text == 'Что надеть')
-    async def process_what_to_wear_command(message: Message):
-        await message.answer(what_to_wear_phrase)
 
     @dp.message(F.text == 'Рестарт')
     async def process_restart_command(message: Message):
@@ -61,40 +58,35 @@ class Bot(DB):
     async def weather_command(message: Message):
         await message.answer(weather_phrase)
 
-    @dp.message(F.text)
+    @dp.message(check_city)
     async def get_city_name(message: types.Message):
         city_name = message.text
-        if check_city(message.text):
-            await find_location(city_name)
-            with open('data/weather.json', 'r', encoding='utf-8') as weather:
-                weather_data = json.load(weather)
-            description = weather_data['weather'][0]['description']
-            temp_min = weather_data['main']['temp_min']
-            temp_max = weather_data['main']['temp_max']
-            feels_like = weather_data['main']['feels_like']
-            await message.answer(f'''Погода в месте {city_name}:\n
+        # if await check_city(city_name):
+        await find_location(city_name)
+        with open('data/weather.json', 'r', encoding='utf-8') as weather:
+            weather_data = json.load(weather)
+        description = weather_data['weather'][0]['description']
+        temp_min = weather_data['main']['temp_min']
+        temp_max = weather_data['main']['temp_max']
+        feels_like = weather_data['main']['feels_like']
+        ans = f'''Погода в месте {city_name}:\n
 Описание - {description}.\n
 Минимальная температура: {int(temp_min - 273.15)} градусов.\n
 Минимальная максимальная: - {int(temp_max - 273.15)} градусов.\n
 Ошущается как: {int(feels_like - 273.15)} градусов.\n
-                               ''')
+'''
+        await message.answer(ans)
+        await message.answer(giga_chat_weather(ans))
 
-            with open('data/find_location.json', 'r', encoding='utf-8') as cooords:
-                data = json.load(cooords)
+        with open('data/find_location.json', 'r', encoding='utf-8') as cooords:
+            data = json.load(cooords)
 
-            db = DB()
-            db.add_city(city_name, float(data[0]['lat']), float(data[0]['lon']))
+        db = DB()
+        db.add_city(city_name, float(data[0]['lat']), float(data[0]['lon']))
 
-            os.remove('data/find_location.json')
-            os.remove('data/weather.json')
-            os.remove('data/check_city.json')
-        else:
-            await message.answer('Такого места нет')
-            os.remove('data/check_city.json')
-
-    @dp.message(Command(commands=['what_to_wear']))
-    async def what_to_wear_command(message: Message):
-        await message.answer(what_to_wear_phrase)
+        os.remove('data/find_location.json')
+        os.remove('data/weather.json')
+        os.remove('data/check_city.json')
 
     @dp.message(Command(commands=['help']))
     async def help_command(message: Message):

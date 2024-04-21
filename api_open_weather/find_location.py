@@ -1,6 +1,6 @@
 import aiohttp
 import json
-from config import OPEN_WEATHER_API_KEY
+from settings.config import OPEN_WEATHER_API_KEY
 
 
 # class
