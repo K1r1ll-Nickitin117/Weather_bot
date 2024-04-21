@@ -11,7 +11,7 @@ def giga_chat_weather(weather_info):
 
     messages = [
         SystemMessage(
-            content="Ты эмпатичный бот-психолог, который помогает пользователю решить его проблемы."
+            content="Ты эмпатичный бот советник выбора одежды"
         )
     ]
 
