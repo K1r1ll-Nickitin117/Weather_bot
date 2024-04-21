@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1a2a50b-b63f-4229-98ab-800ed674d2e4" name="Changes" comment="////52...">
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/check_city.py" beforeDir="false" afterPath="$PROJECT_DIR$/check_city.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/db_s.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_s.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/weather_bot.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/weather_bot.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recommendations/poll_with_clothes_items.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recommendations/system_recommendations.py" beforeDir="false" afterPath="$PROJECT_DIR$/giga_chat_api/gigachat_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/keyboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/keyboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/phrases.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/set_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/set_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,9 +77,9 @@
       <recent name="D:\PyProject\pythonProject1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PyProject\pythonProject1\settings" />
       <recent name="D:\PyProject\pythonProject1\giga_chat_api" />
       <recent name="D:\PyProject\pythonProject1\db" />
-      <recent name="D:\PyProject\pythonProject1\settings" />
     </key>
   </component>
   <component name="RunManager" selected="Python.bot">
@@ -481,7 +471,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713645636280</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="////52...">
+      <option name="closed" value="true" />
+      <created>1713699445642</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1713699445642</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
