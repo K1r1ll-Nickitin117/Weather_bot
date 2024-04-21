@@ -7,6 +7,7 @@ from aiogram.types import Message
 from aiogram import Bot, Dispatcher, F, types
 
 # from giga_chat_api.gigachat_api import giga_chat_weather
+from settings.urlkb import inlkb
 from check_city import check_city
 from db.db_s import DB
 from api_open_weather.find_location import find_location
@@ -48,6 +49,20 @@ class Bot(DB):
         db = DB()
         db.drop_table()
         await message.answer(restart_phrase)
+
+    @dp.message(F.text == 'О проекте')
+    async def url_command(message: types.Message):
+        await message.answer(
+            text='О проекте:',
+            reply_markup=inlkb
+        )
+
+    @dp.message(Command(commands=['about']))
+    async def url_command_s(message: types.Message):
+        await message.answer(
+            text='О проекте:',
+            reply_markup=inlkb
+        )
 
     @dp.message(F.text == 'Статистика')
     async def process_stat_command(message: Message):
@@ -97,6 +112,10 @@ class Bot(DB):
 
     @dp.message(Command(commands=['help']))
     async def help_command(message: Message):
+        await message.answer(help_phrase)
+
+    @dp.message(Command(commands=['about']))
+    async def about_command(message: Message):
         await message.answer(help_phrase)
 
     @dp.message(Command(commands=['restart']))

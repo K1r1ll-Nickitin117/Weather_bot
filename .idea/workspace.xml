@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b1a2a50b-b63f-4229-98ab-800ed674d2e4" name="Changes" comment="////52...">
       <change afterPath="$PROJECT_DIR$/settings/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings/urlkb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_open_weather/find_location.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_open_weather/find_location.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/check_city.py" beforeDir="false" afterPath="$PROJECT_DIR$/check_city.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/weather_bot.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/weather_bot.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/giga_chat_api/gigachat_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/giga_chat_api/gigachat_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/phrases.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/keyboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/keyboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/set_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/set_menu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -494,7 +492,39 @@
       <option name="project" value="LOCAL" />
       <updated>1713699992802</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="////52...">
+      <option name="closed" value="true" />
+      <created>1713720550904</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1713720550904</updated>
+    </task>
+    <task id="LOCAL-00035" summary="////52...">
+      <option name="closed" value="true" />
+      <created>1713720644908</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1713720644908</updated>
+    </task>
+    <task id="LOCAL-00036" summary="////52...">
+      <option name="closed" value="true" />
+      <created>1713720729213</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1713720729213</updated>
+    </task>
+    <task id="LOCAL-00037" summary="////52...">
+      <option name="closed" value="true" />
+      <created>1713720747467</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1713720747467</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
