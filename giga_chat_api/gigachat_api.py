@@ -1,9 +1,6 @@
 from langchain.schema import HumanMessage, SystemMessage
 from langchain.chat_models.gigachat import GigaChat
 from settings.config import AUTHORIATION_DATA
-import requests
-import json
-from pprint import pprint
 
 
 def giga_chat_weather(weather_info):
