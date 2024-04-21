@@ -22,4 +22,4 @@ async def check_city(city):
     if found == "0":
         return True
     else:
-        return False
+        pass

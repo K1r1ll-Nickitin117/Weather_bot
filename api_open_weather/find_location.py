@@ -3,7 +3,6 @@ import json
 from settings.config import OPEN_WEATHER_API_KEY
 
 
-# class
 async def get_weather(lat, lon):
     async with aiohttp.ClientSession() as session:
         async with session.get(

@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b1a2a50b-b63f-4229-98ab-800ed674d2e4" name="Changes" comment="////52...">
       <change afterPath="$PROJECT_DIR$/settings/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_open_weather/find_location.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_open_weather/find_location.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/check_city.py" beforeDir="false" afterPath="$PROJECT_DIR$/check_city.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/weather_bot.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/weather_bot.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/giga_chat_api/gigachat_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/giga_chat_api/gigachat_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/phrases.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/phrases.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,32 +52,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.bot.executor": "Run",
-    "Python.db_s.executor": "Run",
-    "Python.dd.executor": "Run",
-    "Python.find_coords.executor": "Run",
-    "Python.find_location.executor": "Run",
-    "Python.get_ip.executor": "Run",
-    "Python.gigachat_api.executor": "Run",
-    "Python.ее.executor": "Run",
-    "Python.уу.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/PyProject/pythonProject1/api_open_weather/data",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.bot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.db_s.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dd.executor&quot;: &quot;Run&quot;,
+    &quot;Python.find_coords.executor&quot;: &quot;Run&quot;,
+    &quot;Python.find_location.executor&quot;: &quot;Run&quot;,
+    &quot;Python.get_ip.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gigachat_api.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ее.executor&quot;: &quot;Run&quot;,
+    &quot;Python.уу.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PyProject/pythonProject1/api_open_weather/data&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PyProject\pythonProject1\api_open_weather\data" />
@@ -479,7 +486,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713699445642</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="////52...">
+      <option name="closed" value="true" />
+      <created>1713699992802</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1713699992802</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
