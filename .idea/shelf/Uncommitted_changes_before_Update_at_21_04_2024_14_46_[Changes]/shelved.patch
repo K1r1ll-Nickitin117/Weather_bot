@@ -1,0 +1,15 @@
+Index: settings/config.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/settings/config.py b/settings/config.py
+new file mode 100644
+--- /dev/null	(date 1713695398215)
++++ b/settings/config.py	(date 1713695398215)
+@@ -0,0 +1,4 @@
++BOT_TOKEN = '6407545116:AAE_GbPhlxOkagHEu0OI7kFDHJmiSRAm580'
++OPEN_WEATHER_API_KEY = 'f5a74085330bfea5038eadb9aabb4f1a'
++GEOCODER_API_KEY = '40d1649f-0493-4b70-98ba-98533de7710b'
++AUTHORIATION_DATA = 'YzA2ODA3MTAtNWZjYi00MjQ2LThmZGUtMjRmMmE4MWJhNDI5OjUyZWJjZDY4LTEyMTMtNGRlYi05MGYyLTQ1NTBiMGZkODcwZg=='
+\ No newline at end of file
